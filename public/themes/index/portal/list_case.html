@@ -1,0 +1,69 @@
+<extend name="public@base"/>
+<block name="banner">
+	<div class="banner2">
+		  <img src="{:cmf_get_image_url($category.more.thumbnail)}">
+			<img src="{:cmf_get_image_url($category.more.thumbnail)}">
+		</div>
+</block>
+<block name="content">
+	<div class="case1">
+		<img src="__TMPL__/public/assets/images/case1_bei.png">
+	</div>
+	<div class="case">
+			<div class="case_ch">
+					<div class="case_title">
+							<p>成 功 案 例</p>
+							<p>PROJECT</p>
+					</div>
+					<ul>
+						<php>$where=['post.recommended'=>['neq',1]];</php>
+						<portal:articles where="$where"  order="post.published_time DESC"
+										 categoryIds="$category.id">
+							<?php if($key < 3):?>
+								<li style="background: url({:cmf_get_image_url($vo.thumbnail)}) 50% no-repeat;">
+										<div><span>{$vo.post_title}</span></div>
+								</li>
+							<?php endif;?>
+						</portal:articles>
+						<php>$where=['post.recommended'=>['eq',1]];</php>
+						<portal:articles where="$where" limit="1"  order="post.published_time DESC"
+										 categoryIds="$category.id">
+							<?php if($key < 3):?>
+								<li style="background: url({:cmf_get_image_url($vo.thumbnail)}) 50% no-repeat;">
+										<div><span>{$vo.post_title}</span></div>
+								</li>
+							<?php endif;?>
+						</portal:articles>
+						<php>$where=['post.recommended'=>['neq',1]];</php>
+						<portal:articles where="$where" limit="5"  order="post.published_time DESC"
+										 categoryIds="$category.id">
+							<?php if($key >= 3):?>
+								<li style="background: url({:cmf_get_image_url($vo.thumbnail)}) 50% no-repeat;">
+										<div><span>{$vo.post_title}</span></div>
+								</li>
+							<?php endif;?>
+						</portal:articles>
+
+
+					</ul>
+			</div>
+	</div>
+	<div class="case2">
+			<div class="case2_ch">
+					<div class="case_title">
+							<p>合 作 伙 伴</p>
+							<p>CUSTOMER</p>
+					</div>
+					<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<links>
+									<div class="swiper-slide"><div style="background: url({:cmf_get_image_url($vo.image)}) 50% no-repeat;background-size: 90%;"></div></div>
+							 </links>
+							</div>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-button-prev"></div>
+					</div>
+					<img class="case2_bei" src="__TMPL__/public/assets/images/in3_bei.png">
+			</div>
+	</div>
+</block>

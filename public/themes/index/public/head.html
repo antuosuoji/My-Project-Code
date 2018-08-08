@@ -1,0 +1,24 @@
+<head>
+  <taglib name="app\portal\taglib\Portal"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{$category.seo_title|default=$site_info.site_name}</title>
+  <meta name="keywords" content="{$category.seo_keywords|default=$site_info.site_seo_keywords}">
+  <meta name="description" content="{$category.seo_description|default=$site_info.site_seo_description}"/>
+  <link rel="stylesheet" type="text/css" href="__TMPL__/public/assets/css/default/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="__TMPL__/public/assets/css/default/index.css">
+  <link rel="stylesheet" type="text/css" href="__TMPL__/public/assets/css/default/page.css">
+      <link rel="stylesheet" type="text/css" href="__TMPL__/public/assets/css/default/media.css">
+  <script type="text/javascript" src="__TMPL__/public/assets/js/default/jquery.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/assets/js/default/swiper.min.js"></script>
+  <script type="text/javascript" src="__TMPL__/public/assets/js/default/index.js"></script>
+  <script type="text/javascript">
+      //全局变量
+      var GV = {
+          ROOT: "__ROOT__/",
+          WEB_ROOT: "__WEB_ROOT__/",
+          JS_ROOT: "static/js/"
+      };
+  </script>
+  <script src="__STATIC__/js/wind.js"></script>
+</head>

@@ -1,0 +1,48 @@
+<extend name="public@base"/>
+<block name="banner">
+	<div class="new1">
+			THE NEWS
+	</div>
+</block>
+<block name="content">
+	<div class="new2">
+			<div class="new2_ch">
+					<div class="mbx">
+							<p><a href="/">首页</a><span> > </span></p>
+							<portal:breadcrumb cid="category.id" self="true">
+							<p><a href="{:cmf_url('portal/List/index',['id'=>$vo['id']])}">{$vo.name}</a><span> > </span></p>
+							</portal:breadcrumb>
+							<p>{$article.post_title}</p>
+					</div>
+					<div class="new_tit">{$article.post_title}</div>
+					<div class="zzsj">
+							<span>作者：{$article.post_source ? $article.post_source : '世纪盛和'}</span>
+							<span>发布时间：{$article.published_time|date="Y-m-d",###}</span>
+					</div>
+					<div class="new_text">
+						    {$article.post_content}
+					</div>
+			</div>
+	</div>
+	<div class="new3">
+			<div class="new3_ch">
+					<div class="cnxh">猜你喜欢</div>
+					<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<portal:articles  limit="20"  order="post.post_hits DESC"
+												 categoryIds="1">
+									<div class="swiper-slide">
+											<a class="cnxh_img" style="background: url({:cmf_get_image_url($vo.thumbnail)}) 50% no-repeat;" href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}"></a>
+											<a class="cnxh_tit" href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}">{$vo.post_title}</a>
+											<p class="cnxh_text">{$vo.post_excerpt}</p>
+									</div>
+								</portal:articles>
+
+							</div>
+							<div style="display: none;" class="swiper-pagination"></div>
+							<div style="display: none;" class="swiper-button-next"></div>
+							<div style="display: none;" class="swiper-button-prev"></div>
+					</div>
+			</div>
+	</div>
+</block>

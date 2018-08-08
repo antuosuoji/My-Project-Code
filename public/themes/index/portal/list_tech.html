@@ -1,0 +1,118 @@
+<extend name="public@base"/>
+<block name="banner">
+	<div class="banner2 banner3">
+			<img src="{:cmf_get_image_url($category.more.thumbnail)}">
+			<img src="__TMPL__/public/assets/images/banner4m.png">
+			<div class="banner3_ch">
+					<ul>
+							<li class="shuzi1_bg">
+									<div id="shuzi1"></div>
+									<i class="jia"></i>
+									<p>钢材服务</p>
+							</li>
+							<li class="shuzi2_bg">
+									<div id="shuzi2"></div>
+									<i class="jia bai">%</i>
+									<i class="jia"></i>
+									<p>2017业务环比增长</p>
+							</li>
+							<li class="shuzi3_bg">
+									<div id="shuzi3"></div>
+									<i class="jia"></i>
+									<p>权威认证</p>
+							</li>
+							<li class="shuzi4_bg">
+									<div id="shuzi4"></div>
+									<i class="jia"></i>
+									<p>权威认证</p>
+							</li>
+					</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="__TMPL__/public/assets/js/default/shuzi.js"></script>
+		<script type="text/javascript">
+		/*数字跳转*/
+		$(function(){
+			$("#shuzi1").rollNum({
+				deVal:1200
+			});
+			$("#shuzi2").rollNum({
+				deVal:500
+			});
+			$("#shuzi3").rollNum({
+				deVal:100
+			});
+			$("#shuzi4").rollNum({
+				deVal:9000
+			});
+		});
+	</script>
+</block>
+<block name="content">
+        <div class="js1">
+            <img class="js1_z1" src="__TMPL__/public/assets/images/js1_z1.png">
+            <img class="js1_z2" src="__TMPL__/public/assets/images/js1_z2.png">
+            <div class="js1_ch">
+                <div class="js1_tit">
+                  <p>产品线</p>
+                  <p>PRODUCT</p>
+                </div>
+                <ul>
+										<portal:articles   order="post.published_time DESC" limit="2"
+														 categoryIds="5">
+	                    <li>
+	                        <div class="js1_fl">
+	                            <p>0{$key+1}</p>
+	                            <p></p>
+	                            <P>{$vo.post_title}</P>
+	                            <div class="js1_text">{:strip_tags($vo.post_content)}</div>
+	                        </div>
+	                        <div class="js1_fr">
+	                            <div class="swiper-container">
+	                                <div class="swiper-wrapper">
+																		<foreach name="$vo.more.photos" item="vv">
+																			<div class="swiper-slide" style="background: url({:cmf_get_image_url($vv.url)}) 50% no-repeat;"></div>
+																		</foreach>
+	                                </div>
+	                                <div class="swiper-pagination"></div>
+	                            </div>
+	                        </div>
+	                    </li>
+										</portal:articles>
+                </ul>
+            </div>
+        </div>
+        <div class="js2">
+          <img class="js2_bei" src="__TMPL__/public/assets/images/in3_bei.png">
+          <div class="js2_ch">
+            <div class="js1_tit">
+              <p>产品优势</p>
+              <p>PRODUCT</p>
+            </div>
+            <ul class="js2_tab1">
+							<portal:subCategories categoryId="6" item="vo">
+									  <li <?php if($key == 0):?>class="bg" <?php endif;?>>{$vo.name}</li>
+							</portal:subCategories>
+            </ul>
+            <ul class="js2_tab2">
+								<portal:subCategories categoryId="6" item="vo">
+		              <li <?php if($key == 0):?>class="bg" <?php endif;?>>
+		                <div class="js2_img" style="background: url({:cmf_get_image_url($vo.more.thumbnail)}) 50% no-repeat;background-size: 60%;"></div>
+		                <div class="js2_fr">
+											<portal:articles limit="5"  order="post.published_time DESC"
+															 categoryIds="$vo.id" item="vv">
+					                  <div class="js2_fr_li">
+					                    <span class="js2_icon" style="background: url(__TMPL__/public/assets/images/js2_icon1.png) 50% no-repeat;background-size: 100%;"></span>
+					                    <div class="js2_ms_fr">
+					                      <p>{$vv.post_title}</p>
+					                      <p>{$vv.post_content}</p>
+					                    </div>
+					                  </div>
+												</portal:articles>
+		                </div>
+		              </li>
+									</portal:subCategories>
+            </ul>
+          </div>
+        </div>
+</block>

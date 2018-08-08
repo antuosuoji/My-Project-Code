@@ -1,0 +1,14 @@
+{
+    "name": "关于我们列表页",
+    "action": "portal/List/index",
+    "description": "关于我们列表模板文件",
+    "order": 10.0,
+    "more": {
+        "vars": {
+
+        },
+        "widgets":{
+
+        }
+    }
+}

@@ -1,0 +1,92 @@
+<extend name="public@base"/>
+<block name="banner">
+	<div class="banner2">
+			<img src="{:cmf_get_image_url($category.more.thumbnail)}">
+			<img src="{:cmf_get_image_url($category.more.thumbnail)}">
+		</div>
+</block>
+<block name="content">
+        <div class="wh1">
+            <img class="wh1_z1" src="__TMPL__/public/assets/images/wh1_z1.png">
+            <div class="js1_tit">
+                <p>企业文化</p>
+                <p>CORPORATE CULTURE</p>
+            </div>
+            <div class="wh1_ch">
+                <div class="wh1_ch2">
+                    <ul>
+                        <li>
+                            <span>仁</span>
+                            <P>以人为本</P>
+                        </li>
+                        <li>
+                            <span>义</span>
+                            <P>坚持正义</P>
+                        </li>
+                        <li>
+                            <span>礼</span>
+                            <P>尊重他人</P>
+                        </li>
+                        <li>
+                            <span>智</span>
+                            <P>服务社会</P>
+                        </li>
+                        <li>
+                            <span>信</span>
+                            <P>信守承诺</P>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wh2">
+            <img class="wh2_z1" src="__TMPL__/public/assets/images/wh2_z1.png">
+            <div class="js1_tit">
+                <p>企业理念</p>
+                <p>OUR CONCEPT</p>
+
+            </div>
+            <div class="wh2_ch">
+                <div class="wh2_ch2">
+                    <ul>
+                        <li>诚信守信为基础</li>
+                        <li>铸造精品为标准</li>
+                        <li>用户满意为己任</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wh3">
+            <div class="js1_tit">
+                <p>企业战略</p>
+                <p>ENTERPRISE STRATEGY</p>
+            </div>
+            <div class="wh3_ch">
+                <div class="wh3_ch2">
+                    <ul>
+											
+												<foreach name="$theme_vars.zhanlue" item="vo">
+
+												</foreach>
+                        <li>
+                            <span>定位</span>
+                            <p>装配式一体化</br>360°服务平台</p>
+                        </li>
+                        <li>
+                            <span>使命</span>
+                            <p>聚焦服务体系</br>为建筑行业创造最大价值</p>
+                        </li>
+                        <li>
+                            <span>愿景</span>
+                            <p>用中国技术</br>做沟通世界的桥梁</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wh4">
+            <img src="__TMPL__/public/assets/images/dt.png">
+            <img src="__TMPL__/public/assets/images/dt_b.png">
+            <img class="wh4_z1" src="__TMPL__/public/assets/images/wh4_z1.png">
+        </div>
+</block>

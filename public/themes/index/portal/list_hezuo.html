@@ -1,0 +1,53 @@
+<extend name="public@base"/>
+<block name="banner">
+	<div class="banner2">
+			<img src="{:cmf_get_image_url($category.more.thumbnail)}">
+			<img src="{:cmf_get_image_url($category.more.thumbnail)}">
+		</div>
+</block>
+<block name="content">
+        <div class="hz1">
+            <img class="hz1_z1" src="__TMPL__/public/assets/images/hz1_z1.png">
+            <div class="hz1_ch">
+                <div class="index_title hz_tit">
+                    <p>{:get_article_info_byid(39)['post_title']}</p>
+                    <p></p>
+                </div>
+                <div class="stmdbt">{:get_article_info_byid(39)['post_title_en']}</div>
+                <div class="hz1_text">{:get_article_info_byid(39)['post_content']}</div>
+            </div>
+        </div>
+        <div class="hz2">
+            <div class="hz2_ch">
+                <div class="index_title hz_tit">
+                    <p>{:get_article_info_byid(40)['post_title']}</p>
+                    <p></p>
+                </div>
+                <div class="hz2_text">
+                  {:get_article_info_byid(40)['post_content']}
+                </div>
+                <style type="text/css">
+                    .hz2_text p:nth-child(1){margin-bottom: 40px;}
+                    .hz2_text p:nth-child(2){margin-bottom: 30px;}
+                    @media (max-width: 768px){
+                        .hz2_text p:nth-child(1){margin-bottom: 30px;}
+                        .hz2_text p:nth-child(2){margin-bottom: 10px;}
+                    }
+                    @media (max-width: 640px){
+                        .hz2_text p:nth-child(1){margin-bottom: 20px;}
+                    }
+                </style>
+            </div>
+        </div>
+
+        <div class="hz3">
+            <img class="hz3_z1" src="__TMPL__/public/assets/images/wh4_z1.png">
+            <div class="hz3_ch">
+                <div class="index_title hz_tit">
+                    <p>{:get_article_info_byid(41)['post_title']}</p>
+                    <p></p>
+                </div>
+                <div class="hz3_text">{:get_article_info_byid(41)['post_content']}</div>
+            </div>
+        </div>
+</block>

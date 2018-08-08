@@ -1,0 +1,41 @@
+{
+    "name": "文化列表页",
+    "action": "portal/List/index",
+    "description": "文化列表模板文件",
+    "order": 10.0,
+    "more": {
+              "vars": {
+                        "zhanlue": {
+                         "title": "企业战略",
+                         "value": [],
+                         "type": "array",
+                         "item": {
+                             "title": {
+                                 "title": "标题",
+                                 "value": "",
+                                 "type": "text",
+                                 "rule": {
+                                     "require": true
+                                 }
+                                },
+                               "con": {
+                                   "title": "说明",
+                                   "value": "",
+                                   "type": "text",
+                                   "rule": {
+                                       "require": true
+                                   }
+                               }
+                        },
+
+                         "rule": {
+                             "require": false
+                         }
+                      }
+
+        },
+        "widgets":{
+
+        }
+    }
+}

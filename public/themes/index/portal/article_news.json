@@ -1,0 +1,9 @@
+{
+    "name": "新闻文章页",
+    "action": "portal/Article/index",
+    "description": "文章页模板文件",
+    "order": 10.0,
+    "more": {
+
+    }
+}

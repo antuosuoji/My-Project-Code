@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<block name="head">
+  <include file="public@head"/>
+</block>
+    <body>
+      <!-- 头部  导航 -->
+      <block name="header">
+        <include file="public@header"/>
+      </block>
+      <!-- banner 区域 -->
+      <block name="banner">
+        <include file="public@banner"/>
+      </block>
+      <!--content 内容区域  -->
+      <block name="content">
+        <div class="in1">
+            <img class="in1_bei" src="__TMPL__/public/assets/images/in1_bei.png">
+            <div class="in1_ch">
+                <div class="index_title">
+                    <p><a style="color: #000;" href="{:cmf_url('portal/List/index',array('id'=>1))}">最新动态</a></p>
+                    <p></p>
+                </div>
+                <ul class="in1_ul">
+                  <php>$where=['post.recommended'=>['=',1]];</php>
+                  <portal:articles where="$where" limit="3" order="post.published_time DESC"
+                                   categoryIds="1">
+                    <li>
+                        <a href="{:cmf_url('portal/Article/index',array('id'=>$vo.id,'cid'=>$vo.category_id))}">
+                            <img src="{:cmf_get_image_url($vo.thumbrecomm)}">
+                            <div><span>{$vo.post_title}</span></div>
+                        </a>
+                    </li>
+                  </portal:articles>
+                </ul>
+            </div>
+        </div>
+
+        <div class="in2">
+            <div class="in2_ch">
+                <ul>
+                  <portal:articles limit="3" order="post.published_time DESC"
+                           categoryIds="2">
+                    <li>
+                      <a >
+                        <div class="in2_fl">
+                            <span></span>
+                            <div class="in2_tit">
+                                <p>{$vo.post_title}</p>
+                                <p></p>
+                                <p>{$vo.post_title_en} </p>
+                            </div>
+                        </div>
+                        <div class="in2_fr" style="background: url({:cmf_get_image_url($vo.thumbnail)}) 50% no-repeat;">
+                            <P>总体鸟瞰图</P>
+                            <div class="in2_fr_text">
+                                <div>
+                                  {:strip_tags($vo.post_content)}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                  </li>
+		              </portal:articles>
+                </ul>
+            </div>
+        </div>
+
+        <div class="in3">
+            <div class="in3_ch">
+                <div class="index_title">
+                    <p>平台服务</p>
+                    <p></p>
+                </div>
+                <ul>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/in3_biao.png) no-repeat;background-size: 100%;"></span>
+                        <span>材料备输</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/in3_biao.png) no-repeat;background-size: 100%;"></span>
+                        <span>规划设计</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/in3_biao.png) no-repeat;background-size: 100%;"></span>
+                        <span>建设施工</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/in3_biao.png) no-repeat;background-size: 100%;"></span>
+                        <span>产业运营</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/in3_biao.png) no-repeat;background-size: 100%;"></span>
+                        <span>材料准备</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/in3_biao.png) no-repeat;background-size: 100%;"></span>
+                        <span>营销推广</span>
+                    </li>
+                </ul>
+            </div>
+            <img class="in3_bei" src="__TMPL__/public/assets/images/in3_bei.png">
+        </div>
+      </block>
+      <!--footer 底部  -->
+      <block name="footer">
+        <div class="footer">
+            <div class="footer_ch">
+                <form class="js-ajax-form" action="{:url('portal/article/postmessage')}" method="post">
+                    <div>
+                        <input type="text" name="email" placeholder="邮箱">
+                        <input type="text" name="tel" placeholder="电话">
+                    </div>
+                    <div><textarea name="message" placeholder="留言"></textarea></div>
+                    <div class="tjbd">
+                        <button class="btn btn-primary btn-block js-ajax-submit" type="submit">提交</button>
+                    </div>
+                </form>
+                <div class="ft_lxfs">
+                    <div class="ft_lxfs_ch ft_lxfs_fl">
+                        <div>客服服务</div>
+                        <div>
+                            <p>邮箱：{:cmf_get_option('server_settings')['k_email']}</p>
+                            <a href="40009092091">电话：{:cmf_get_option('server_settings')['k_tel']}</a>
+                        </div>
+                    </div>
+                    <div class="ft_lxfs_ch ft_lxfs_fr">
+                        <div>渠道合作</div>
+                        <div>
+                            <p>邮箱：{:cmf_get_option('server_settings')['q_email']}</p>
+                            <a href="13020092039">电话：{:cmf_get_option('server_settings')['q_tel']}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="beian">2018，Shijishenghe Security Response Center,Inc. All Right Reserved. 免责声明</div>
+            </div>
+        </div>
+        <script src="__STATIC__/js/admin.js"></script>
+      </block>
+    </body>
+</html>

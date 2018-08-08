@@ -1,0 +1,14 @@
+{
+    "name": "案例列表页",
+    "action": "portal/List/index",
+    "description": "案例列表模板文件",
+    "order": 10.0,
+    "more": {
+        "vars": {
+
+        },
+        "widgets":{
+
+        }
+    }
+}

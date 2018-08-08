@@ -1,0 +1,35 @@
+<div class="header">
+    <div class="header_ch">
+        <a class="logo" href="/"></a>
+        <php>
+          if(isset($category))
+          define('CATID',$category['id']);
+          else
+           define('CATID',0);
+        </php>
+        <ul class="nav">
+          <navigation nav-id="1" root="">
+              <navigationMenu root="li">
+                <a <?php if(CATID == $menu['catid']) echo 'class="bg"';?> href="{$menu.href|default=''}" target="{$menu.target|default=''}">{$menu.name|default=''}</a>
+              </navigationMenu>
+           </navigation>
+        </ul>
+    </div>
+</div>
+<div class="header_m">
+    <a class="logo_m" href="/"></a>
+    <div class="nav_h">
+        <span class="heng1"></span>
+        <span class="heng2"></span>
+        <span class="heng3"></span>
+    </div>
+    <a class="phone_top_m" href="tel:400-8888-888"></a>
+
+    <ul class="nav_ul">
+      <navigation nav-id="1" root="">
+          <navigationMenu root="li">
+            <a <?php if(CATID == $menu['catid']) echo 'class="bg"';?> href="{$menu.href|default=''}" target="{$menu.target|default=''}">{$menu.name|default=''}</a>
+          </navigationMenu>
+       </navigation>
+    </ul>
+</div>

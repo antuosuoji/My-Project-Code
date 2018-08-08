@@ -1,0 +1,99 @@
+<extend name="public@base"/>
+<block name="banner">
+	<div class="banner">
+	  <div class="swiper-container">
+	          <div class="swiper-wrapper">
+	                <slides id="2" >
+	                    <div class="swiper-slide"><a href="{$vo.url}" target="_blank"><img src="{:cmf_get_image_url($vo.image)}"><img src="{:cmf_get_image_url($vo.image)}"></a></div>
+	                </slides>
+	          </div>
+	          <div class="swiper-pagination"></div>
+	          <div class="swiper-button-next"></div>
+	          <div class="swiper-button-prev"></div>
+	      </div>
+	</div>
+</block>
+<block name="content">
+        <div class="ab1">
+            <img class="ab1_bei" src="__TMPL__/public/assets/images/ab1_bei.png">
+            <div class="ab1_ch">
+                <div class="ab1_tit">
+                    <p>{:get_cat_info(12)['name']}</p>
+                    <p>STEEL STRUCTURE</p>
+                </div>
+                <div class="ab1_text">{:get_cat_info(12)['description']}</div>
+                <ul class="ab1_ul">
+									<portal:articles  limit="4"  order="post.published_time DESC"
+													 categoryIds="12">
+										<li><img src="{:cmf_get_image_url($vo.thumbnail)}"></li>
+									</portal:articles>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ab2">
+            <img class="ab2_z2" src="__TMPL__/public/assets/images/ab2_z2.png">
+            <img class="ab2_z1" src="__TMPL__/public/assets/images/ab2_z1.png">
+            <div class="ab2_ch">
+                <div class="ab1_tit ab2_tit">
+                    <p>SIX 钢结构装配结构特征</p>
+                    <p>CHARACTERISTICS</p>
+                </div>
+                <ul class="ab2_ul">
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/ab2_1.png) 50% no-repeat;background-size: 100%"></span><span>集成化设计</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/ab2_1.png) 50% no-repeat;background-size: 100%"></span><span>一体化装修</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/ab2_1.png) 50% no-repeat;background-size: 100%"></span><span>工业化生产</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/ab2_1.png) 50% no-repeat;background-size: 100%"></span><span>智能化应用</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/ab2_1.png) 50% no-repeat;background-size: 100%"></span><span>装配式施工</span>
+                    </li>
+                    <li>
+                        <span style="background: url(__TMPL__/public/assets/images/ab2_1.png) 50% no-repeat;background-size: 100%"></span><span>信息化管理</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="ab3">
+            <div class="ab3_ch">
+                <div class="ab3_tit">
+                    <p>研发专利</p>
+                    <p></p>
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+											<portal:articles  limit="400"  order="post.published_time DESC"
+															 categoryIds="13">
+                        <div class="swiper-slide" style="background: url({:cmf_get_image_url($vo.thumbnail)}) 50% no-repeat;"></div>
+                      </portal:articles>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ab4">
+            <img class="ab4_z1" src="__TMPL__/public/assets/images/ab4_z1.png">
+            <img class="ab4_z2" src="__TMPL__/public/assets/images/ab4_z2.png">
+            <div class="ab4_ch">
+                <div class="ab3_tit ab4_tit">
+                    <p>业务范围</p>
+                    <p></p>
+                </div>
+                <div class="ab4_text">世纪盛和开发项目以国家政策为导向坚持“精准扶贫、产业脱贫”的工作思路,帮助二三线城市经济发展</div>
+                <div class="ab4_bei">
+                    <img src="__TMPL__/public/assets/images/dt_yw.png">
+                </div>
+            </div>
+        </div>
+
+</block>
